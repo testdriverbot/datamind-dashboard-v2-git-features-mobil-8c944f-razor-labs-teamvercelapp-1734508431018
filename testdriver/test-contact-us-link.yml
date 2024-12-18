@@ -1,0 +1,16 @@
+version: 4.1.30
+steps:
+  - prompt: Focus the browser window.
+    commands: []
+  - prompt: Locate and click the "FORGOT PASSWORD" link.
+    commands:
+      - command: hover-text
+        text: FORGOT PASSWORD
+        description: forgot password link below the password input
+        action: click
+  - prompt: >-
+      Assert that the user is navigated to the "Forgot Password" page
+      successfully.  # Use the content of the file from the environment
+    commands:
+      - command: assert
+        expect: Password Reset page is displayed
