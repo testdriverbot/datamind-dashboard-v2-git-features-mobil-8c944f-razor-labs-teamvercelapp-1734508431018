@@ -1,0 +1,24 @@
+version: 4.1.30
+steps:
+  - prompt: Focus the browser window.
+    commands: []
+  - prompt: Click on the DataMind AI logo.
+    commands:
+      - command: hover-text
+        text: DataMind AI
+        description: DataMind AI logo in the top left corner
+        action: click
+  - prompt: >-
+      Assert that clicking the logo redirects the user to the homepage or
+      dashboard.  # Use the content of the file from the environment
+    commands:
+      - command: assert
+        expect: Connect To DataMind AI
+  - prompt: >-
+      Assert that clicking the logo redirects the user to the homepage or
+      dashboard.  # Use the content of the file from the environment
+    commands:
+      - command: wait-for-text
+        text: Welcome to DataMind AI Dashboard
+      - command: assert
+        expect: the user is on the homepage or dashboard
