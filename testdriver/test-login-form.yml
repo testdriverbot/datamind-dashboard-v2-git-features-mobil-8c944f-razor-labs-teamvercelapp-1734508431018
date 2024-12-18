@@ -1,0 +1,34 @@
+version: 4.1.30
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click on the "Email" input field and enter a valid email address.
+    commands:
+      - command: hover-text
+        text: Email
+        description: email input field label above the input box
+        action: click
+      - command: type
+        text: test@example.com
+  - prompt: Click on the "Password" input field and enter a valid password.
+    commands:
+      - command: hover-text
+        text: Password
+        description: password input field label above the input box
+        action: click
+      - command: type
+        text: SecurePassword123
+  - prompt: Click the "CONNECT" button.
+    commands:
+      - command: hover-text
+        text: CONNECT
+        description: connect button below the password input field
+        action: click
+  - prompt: >-
+      Assert that the user is logged in successfully or receives a confirmation
+      message.  # Use the content of the file from the environment
+    commands:
+      - command: assert
+        expect: Welcome back, user!
