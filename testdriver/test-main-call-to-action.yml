@@ -1,0 +1,16 @@
+version: 4.1.30
+steps:
+  - prompt: Focus the browser window.
+    commands: []
+  - prompt: Locate and click the "CONNECT" button.
+    commands:
+      - command: hover-text
+        text: CONNECT
+        description: connect button on the login page
+        action: click
+  - prompt: >-
+      Assert that clicking the "CONNECT" button initiates the login process or
+      provides feedback.  # Use the content of the file from the environment
+    commands:
+      - command: assert
+        expect: error messages for missing email and password are displayed
